@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de Material</title>
+
+    <!-- Bootstrap y estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="./css/integral.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Calculadora de Material</h1>
+
+        <div class="text-center">
+            <i class="math-icon fas fa-calculator"></i>
+            <i class="math-icon fas fa-sigma"></i>
+            <i class="math-icon fas fa-sum"></i>
+        </div>
+<div class="custom-control custom-switch text-right mb-3">
+  <input type="checkbox" class="custom-control-input" id="darkModeToggle">
+  <label class="custom-control-label" for="darkModeToggle">Modo Oscuro</label>
+</div>
+
+        <form id="integralForm">
+            <div class="form-group">
+                <label for="shape">Selecciona la forma de la pieza:</label>
+                <select id="shape" class="form-control" required>
+                    <option value="cilindro">🧊 Cilíndrica</option>
+                    <option value="triangulo">📐 Triangular</option>
+                    <option value="aro">🌀 Aro</option>
+                    <option value="cuadrado">◼️ Cuadrada</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+    <label for="function1">Función 1 (superior):</label>
+    <input
+      type="text"
+      id="function1"
+      class="form-control"
+      placeholder="Ejemplo: Math.pow(x, 2) para x², usa 'x' como variable"
+      required
+    />
+</div>
+<div class="form-group">
+    <label for="function2">Función 2 (inferior):</label>
+    <input
+      type="text"
+      id="function2"
+      class="form-control"
+      placeholder="Función inferior, opcional. Ejemplo: 0 para eje X"
+    />
+</div>
+
+            <div class="form-group">
+                <label for="lowerBound">Límite Inferior:</label>
+                <input type="number" id="lowerBound" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="upperBound">Límite Superior:</label>
+                <input type="number" id="upperBound" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="thickness">Grosor de la pieza (cm):</label>
+                <input type="number" id="thickness" class="form-control" value="1" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Calcular Integral</button>
+
+            <div id="loader" class="text-center" style="display:none; margin-top:10px;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Calculando...</span>
+                </div>
+            </div>
+        </form>
+
+        <div id="resultadoCompleto">
+            <div id="result" class="mt-4 text-center"></div>
+            <canvas
+                id="grafica"
+                width="400"
+                height="200"
+                class="mx-auto mt-3"
+                style="display:none;"
+            ></canvas>
+
+            <div id="exportSection" style="margin-top: 20px; display: none;">
+                <button id="downloadPNG" class="btn btn-success">Descargar como Imagen</button>
+                <button id="downloadPDF" class="btn btn-danger">Descargar como PDF</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-info mt-3" data-toggle="modal" data-target="#infoModal">
+            Más Información
+        </button>
+
+       <!-- Modal Información -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Información Adicional</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Esta calculadora utiliza el método del trapecio para calcular la integral definida.
+                    Puedes ingresar una o dos funciones para calcular área bajo la curva o área entre dos curvas.
+                </p>
+                <hr />
+                <h6>Cómo ingresar funciones:</h6>
+                <ul>
+                    <li>Usa <code>x</code> como variable independiente.</li>
+                    <li>Para potencias usa <code>Math.pow(x, 2)</code> para x², o usa <code>x^2</code> (se convertirá automáticamente).</li>
+                    <li>Usa funciones matemáticas de JavaScript como <code>Math.sin(x)</code>, <code>Math.cos(x)</code>, <code>Math.PI</code>, etc.</li>
+                </ul>
+                <hr />
+                <h6>Ejemplos de funciones y límites:</h6>
+                <ul>
+                    <li>Área entre <code>Math.pow(x, 2)</code> y <code>x + 2</code>, límites: <code>0</code> a <code>3</code></li>
+                    <li>Área bajo la curva <code>Math.sin(x)</code>, límites: <code>0</code> a <code>Math.PI</code></li>
+                    <li>Área entre círculos (aro): <code>Math.PI * Math.pow(x, 2)</code> y <code>Math.PI * Math.pow(x - 1, 2)</code>, límites: <code>1</code> a <code>3</code></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Modal Acerca de -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Acerca de</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Proyecto desarrollado por estudiantes de CECAR para la materia de Cálculo Integral.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-4 text-center">
+            <p>&copy; 2025 Calculadora de Material. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="./js/integral.js"></script>
+</body>
+</html>

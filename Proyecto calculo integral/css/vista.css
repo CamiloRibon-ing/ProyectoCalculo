@@ -1,0 +1,227 @@
+body {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  margin: 0;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.1);
+}
+
+body.dark-mode {
+  background: repeating-linear-gradient(45deg, #1e1e1e, #1e1e1e 10px, #2a2a2a 10px, #2a2a2a 20px);
+  color: #e0e0e0;
+}
+
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  padding: 1rem 2rem;
+  border-bottom-left-radius: 60% 20%;
+  border-bottom-right-radius: 60% 20%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.fixed-image {
+  background-image: url('https://img.freepik.com/fotos-premium/papel-negro-vacio-espacio-fondo-texto-formula-cientifica-calculos_279525-24478.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  margin: 30px 0;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-title {
+  background: rgba(0, 123, 255, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #00a3cc);
+  transform: scale(1.05);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.card {
+  margin: 20px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+footer {
+ background: linear-gradient(to right, #007bff, #00c6ff);
+  padding: 1rem 2rem;
+  border-bottom-left-radius: 60% 20%;
+  border-bottom-right-radius: 60% 20%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+}
+footer .legend-item {
+  text-align: center;
+  margin: 10px;
+}
+
+footer .legend-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+footer .legend-item img:hover {
+  transform: scale(1.05);
+}
+
+footer .legend-name {
+
+  font-size: 0.85rem;
+  color: #f8f9fa;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+
+.shape {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.circle {
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+.square {
+  background-color: #ffc107;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #dc3545;
+}
+
+.content-section {
+  margin-top: 30px;
+}
+
+div img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar {
+  background: linear-gradient(to right, #111, #222);
+}
+
+.dark-mode footer {
+  background-color: #000;
+  border-top: 3px solid #00c6ff;
+}
+
+.carousel-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item img {
+  border-radius: 15px;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.02);
+}
+
+#abouModal {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.animate-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .animate-icon {
+  transform: rotate(15deg) scale(1.1);
+}

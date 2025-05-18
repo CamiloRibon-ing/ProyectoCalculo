@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Cálculo de Material mediante Integrales Definidas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/vista.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="vista.html">Calculadora de Material</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="vista.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="Integral.html">Calculadora</a></li>
+        <li class="nav-item"><a class="nav-link" href="informacion.html">Información</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aboutModal" data-toggle="modal">Acerca de</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <button class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme" id="darkModeToggle"> 
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="1em" height="1em" fill="currentColor" stroke-linecap="round" class="theme-toggle__classic" viewBox="0 0 32 32">
+    <clipPath id="theme-toggle__classic__cutout">
+      <path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
+    </clipPath>
+    <g clip-path="url(#theme-toggle__classic__cutout)">
+      <circle cx="16" cy="16" r="9.34" />
+      <g stroke="currentColor" stroke-width="1.5">
+        <path d="M16 5.5v-4" />
+        <path d="M16 30.5v-4" />
+        <path d="M1.5 16h4" />
+        <path d="M26.5 16h4" />
+        <path d="m23.4 8.6 2.8-2.8" />
+        <path d="m5.7 26.3 2.9-2.9" />
+        <path d="m5.8 5.8 2.8 2.8" />
+        <path d="m23.4 23.4 2.9 2.9" />
+      </g>
+    </g>
+  </svg>
+</button>
+
+
+    <div class="fixed-image">
+      <div class="welcome-title">
+        <h1>¡Bienvenido!</h1>
+        <p>Calcula el material necesario para tus piezas utilizando integrales definidas.</p>
+      </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-ride="carousel" data-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://st1.uvnimg.com/dims4/default/c9af246/2147483647/thumbnail/480x270/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-2.JPG" class="d-block w-100 rounded" alt="math1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://st1.uvnimg.com/dims4/default/f9a23ae/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-3.jpg" class="d-block w-100 rounded" alt="math2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/220px-Alan_Turing_Aged_16.jpg" alt="Alan Turin" class="d-block w-100 rounded" alt="math3">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">¿Qué son las integrales definidas?</h5>
+          <p class="card-text">Permiten calcular el área bajo una curva en un intervalo específico. Esta área puede ser interpretada como la cantidad de material necesario para fabricar una pieza con una forma determinada.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Proceso de Cálculo</h5>
+          <ol>
+            <li><strong>Seleccionar la forma de la pieza:</strong> cilindro, triángulo, aro...</li>
+            <li><strong>Definir la función:</strong> matemática que describe el área.</li>
+            <li><strong>Establecer límites:</strong> inferior y superior.</li>
+            <li><strong>Calcular el área:</strong> usando la integral definida.</li>
+            <li><strong>Interpretar el resultado:</strong> para conocer el material requerido.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Accede a la Calculadora</h5>
+              <p class="card-text">Haz clic para comenzar a calcular.</p>
+              <a href="Integral.html" class="btn btn-primary">Ir a la Calculadora</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Información sobre Integrales</h5>
+              <p class="card-text">Aprende más sobre su aplicación.</p>
+              <a href="informacion.html" class="btn btn-primary">Ir a la Información</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+  <div class="col-md-6 text-center">
+    <button type="button" class="btn btn-primary d-inline-flex align-items-center px-4 py-2" data-toggle="modal" data-target="#aboutModal">
+      <i class="fas fa-info-circle mr-2 animate-icon"></i>
+      Más Información
+    </button>
+  </div>
+</div>
+
+           
+            
+      <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Acerca de</h5>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Este sitio fue creado para ayudarte a calcular material usando integrales definidas.</p>
+              <p>Desarrollado por estudiantes de CECAR.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-5">
+  <div class="container text-center">
+    <h5 class="text-light mb-4">Leyendas de la Matemática</h5>
+
+    <div id="footerCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center flex-wrap">
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://st1.uvnimg.com/dims4/default/c9af246/2147483647/thumbnail/480x270/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-2.JPG" alt="Pitágoras">
+                <div class="legend-name">Pitágoras</div>
+              </a>
+            </div>
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/220px-Alan_Turing_Aged_16.jpg" alt="Alan Turing">
+                <div class="legend-name">Alan Turing</div>
+              </a>
+            </div>
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://st1.uvnimg.com/dims4/default/f72af85/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-5.jpeg" alt="Riemann">
+                <div class="legend-name">Riemann</div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center flex-wrap">
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://st1.uvnimg.com/dims4/default/5dd6f9b/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-4.jpeg" alt="Euler">
+                <div class="legend-name">Euler</div>
+              </a>
+            </div>
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://st1.uvnimg.com/dims4/default/f9a23ae/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-3.jpg" alt="Newton">
+                <div class="legend-name">Newton</div>
+              </a>
+            </div>
+            <div class="legend-item mx-3">
+              <a href="https://www.univision.com/explora/los-10-matematicos-mas-grandes-de-la-historia" target="_blank">
+                <img src="https://st1.uvnimg.com/dims4/default/6726533/2147483647/thumbnail/1024x576%3E/quality/75/?url=https%3A%2F%2Fuvn-brightspot.s3.amazonaws.com%2Fassets%2Fvixes%2Fbtg%2Fcuriosidades.batanga.com%2Ffiles%2FLos-10-matematicos-mas-grandes-de-la-historia-8.jpg" alt="Gauss">
+                <div class="legend-name">Gauss</div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <a class="carousel-control-prev" href="#footerCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#footerCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+
+    <p class="mt-4 text-light small">&copy; 2025 Calculadora de Material. Todos los derechos reservados.</p>
+    <p class="text-light small">Contacto: 3024062449</p>
+  </div>
+</footer>
+
+
+  
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

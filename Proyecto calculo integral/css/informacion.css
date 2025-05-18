@@ -1,0 +1,181 @@
+  /* Estilo general del cuerpo */
+body, html {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left:1rem ;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.1);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background: repeating-linear-gradient(45deg, #1e1e1e, #1e1e1e 10px, #2a2a2a 10px, #2a2a2a 20px);
+  color: #e0e0e0;
+}
+
+/* Encabezado curvo y colorido */
+/* Navbar personalizado sin Bootstrap */
+.navbar {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  border-bottom-left-radius: 60% 20%;
+  border-bottom-right-radius: 60% 20%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 10;
+  
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.navbar-links a {
+  margin-left: 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+
+.navbar-links a:hover {
+  color: #ffc107;
+}
+
+    .hero {
+      background-image: url('https://img.freepik.com/fotos-premium/papel-negro-vacio-espacio-fondo-texto-formula-cientifica-calculos_279525-24478.jpg');
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: red;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .hero-section {
+    
+background-color: oklch(0.707 0.165 254.624);
+text-align: center;
+color: white !important;
+justify-content: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: yellow;
+      border-radius: 0 0 50% 50%;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Montserrat', sans-serif;
+      background: rgba(0, 123, 255, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .card {
+      margin: 20px auto;
+      height: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .footer {
+     background: linear-gradient(to right, #007bff, #00c6ff);
+  padding: 1rem 2rem;
+  border-bottom-left-radius: 60% 20%;
+  border-bottom-right-radius: 60% 20%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: white;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .dark-mode .footer {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    .dark-mode .card-title {
+      color: #90caf9;
+    }
+
+    .dark-mode .btn-primary {
+      background-color: #1565c0;
+    }

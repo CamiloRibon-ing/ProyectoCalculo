@@ -1,0 +1,175 @@
+body {
+    background: linear-gradient(to bottom right, #f0f4f8, #dbe9f1);
+    font-family: 'Roboto', sans-serif;
+    color: #212529;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #343a40;
+}
+
+input.form-control {
+    border-radius: 6px;
+    transition: box-shadow 0.2s ease;
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0056b3, #00a3cc);
+    transform: scale(1.05);
+}
+
+.btn-info, .btn-success, .btn-danger {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.btn-info:hover, .btn-success:hover, .btn-danger:hover {
+    transform: scale(1.05);
+}
+
+.result {
+    background-color: #f8f9fa;
+    border: 2px dashed #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.result.show {
+    opacity: 1;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 3px solid #007bff;
+}
+
+.math-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.math-icon:hover {
+    transform: scale(1.2);
+    color: #00c6ff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Color amarillo al pasar el mouse */
+}
+
+small.form-text.text-muted {
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: #dcfce7;
+}
+
+canvas#grafica {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+}
+#downloadPDF,
+#downloadPNG {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+#downloadPDF:hover,
+#downloadPNG:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0056b3, #00a3cc);
+}
+
+body.dark-mode {
+    background: linear-gradient(to bottom right, #121212, #1e1e1e);
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background-color: #1c1c1c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode .modal-content {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+body.dark-mode .form-control {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .btn-primary,
+body.dark-mode #downloadPDF,
+body.dark-mode #downloadPNG {
+    background: linear-gradient(90deg, #00c6ff, #007bff);
+    color: white;
+}
+
+body.dark-mode .math-icon {
+    color: #00c6ff;
+}
+
+body.dark-mode footer {
+    background-color: #111;
+    border-top-color: #00c6ff;
+}
+.result {
+    border: 2px solid transparent;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .result {
+    background: #2a2a2a;
+    border-color: #00c6ff;
+}
